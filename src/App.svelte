@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-    <title>currPage.title</title>
+    <title>{currPage.title}</title>
 </svelte:head>
 
 <div class="page">
