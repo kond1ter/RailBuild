@@ -3,6 +3,7 @@
     import Header from "./lib/components/Header.svelte";
     import Navbar from "./lib/components/Navbar.svelte";
     import pages from "./lib/util/pages";
+    import "./assets/css/icons.css";
 
     let currPage = $state(pages[1]);
 </script>

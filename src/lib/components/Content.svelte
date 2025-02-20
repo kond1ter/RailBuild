@@ -3,7 +3,7 @@
     import Map from "./Map.svelte";
     import VideoBar from "./VideoBar.svelte";
     import Video from "./Video.svelte";
-	import "../util/player.css";
+	import "../../assets/css/player.css";
 
     let contentState = $state({
         mapExpanded: true,
