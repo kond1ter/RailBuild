@@ -11,12 +11,6 @@
         currentVideo: null,
         videoPlaying: false
     })
-
-    let mapWrapperClass = $derived.by(() => {
-        return contentState.mapExpanded
-            ? "map-wrapper_map-mode"
-            : "map-wrapper_video-mode";
-    })
 </script>
 
 <button class="sidebar-button" aria-label="Toggle sidebar">
@@ -27,7 +21,9 @@
     <i class="bi-funnel-fill"></i>
 </button>
 
-<div class="map-wrapper {mapWrapperClass} {contentState.videoPlaying ? 'map-wrapper_video-playing' : ''}">
+<div class="map-wrapper 
+    {contentState.mapExpanded ? "map-wrapper_map-mode" : "map-wrapper_video-mode"} 
+    {contentState.videoPlaying ? 'map-wrapper_video-playing' : ''}">
     <Map bind:contentState={contentState} />
 </div>
 
@@ -93,18 +89,6 @@
         transform: scale(0.20);
     }
 
-    @media(min-aspect-ratio: 4 / 3) {
-        .map-wrapper_video-mode {
-            transform: scale(0.20, 0.25);
-        }
-    }
-
-    @media(min-aspect-ratio: 16 / 9) {
-        .map-wrapper_video-mode {
-            transform: scale(0.20, 0.29);
-        }
-    }
-
     .video-wrapper {
         bottom: 0;
         left: 0;
@@ -149,6 +133,18 @@
     .other-dates-bttn_video-playing {
         opacity: 0;
         pointer-events: none;
+    }
+
+    @media(min-aspect-ratio: 4 / 3) {
+        .map-wrapper_video-mode {
+            transform: scale(0.20, 0.25);
+        }
+    }
+
+    @media(min-aspect-ratio: 16 / 9) {
+        .map-wrapper_video-mode {
+            transform: scale(0.20, 0.29);
+        }
     }
 
     @media (max-width: 600px) {
