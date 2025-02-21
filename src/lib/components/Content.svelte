@@ -90,7 +90,19 @@
     .map-wrapper_video-mode {
         bottom: 70px;
         left: 25px;
-        transform: scale(0.25);
+        transform: scale(0.20);
+    }
+
+    @media(min-aspect-ratio: 4 / 3) {
+        .map-wrapper_video-mode {
+            transform: scale(0.20, 0.25);
+        }
+    }
+
+    @media(min-aspect-ratio: 16 / 9) {
+        .map-wrapper_video-mode {
+            transform: scale(0.20, 0.29);
+        }
     }
 
     .video-wrapper {
