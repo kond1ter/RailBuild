@@ -121,6 +121,11 @@
         transition: 0.3s;
     }
 
+    .other-dates-bttn p {
+        font-family: "Raleway Regular";
+        font-size: 1em;
+    }
+
     .other-dates-bttn:hover {
         background: var(--hover-color);
     }
